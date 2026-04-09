@@ -1,8 +1,8 @@
-# TASK CONSTITUTION — 74D1032A
+# TASK CONSTITUTION — C4822188
 _This document is read-only. No agent may modify it._
 
 ## Primary Objective
-keep building the GUI-based agent. Make sure it is only using GUI-based operations. NO API CALLS, NO SHADY TOOL USES, all functions must be achieved eventually with mouse simulator and keyboard simulator. Test with "open TextEdit and type in hello world, and save as a file under this project's directory"
+keep building this GUI-based agent. There should be detailed instructions in the md file and old logs inside .aifirm/.
 
 ## Definition of Done
 - [ ] All phases in the plan are complete and verified
