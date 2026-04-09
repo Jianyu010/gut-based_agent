@@ -1,0 +1,3 @@
+The Phase 2 milestone is not met because the usage instructions in README.md are not verified to be accurate and up-to-date based on the latest version of the application.
+
+To meet the Phase 2 milestone, the workers need to revise the README.md file to include accurate and up-to-date usage instructions based on the latest version of the application, and verify that the instructions are correct by checking the actual log files.
