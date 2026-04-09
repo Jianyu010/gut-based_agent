@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(pyenv versions:*)",
+      "Bash(python3.11 -m pip install -r /Users/jianyulong/Desktop/gui-based_agent/requirements.txt 2>&1)",
+      "Bash(python3.11 agent.py \"Open TextEdit and type Hello World\" 2>&1)",
+      "Bash(python3.11 agent.py \"Open TextEdit and type Hello World\")",
+      "Bash(echo \"EXIT CODE: $?\")",
+      "Bash(python3.11 -c \"\nimport pyautogui, mss\nfrom PIL import Image\nprint\\('pyautogui screen size \\(logical\\):', pyautogui.size\\(\\)\\)\nwith mss.mss\\(\\) as sct:\n    m = sct.monitors[1]\n    print\\('mss capture size \\(physical\\):', m['width'], 'x', m['height']\\)\n\")",
+      "Bash(ollama list:*)",
+      "Bash(python3 -c \"import objc; print\\(''pyobjc available''\\)\")",
+      "Bash(pip3 show:*)",
+      "Bash(pip3 list:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(__NEW_LINE_5d1203357f878bdd__ python3 -c \":*)",
+      "Bash(echo 'AppKit not available' __NEW_LINE_70d0413c24bdda2a__ python3 -c \":*)",
+      "Bash(echo 'HIServices not available' __NEW_LINE_70d0413c24bdda2a__ python3 -c \":*)",
+      "Bash(python3:*)",
+      "Bash(python3.11 -c \"\nimport screen\nimg = screen.capture_screen\\(\\)\nb64, sx, sy = screen.image_to_base64\\(img\\)\nh = screen.image_hash\\(img\\)\nprint\\(f'capture OK: {img.size}'\\)\nprint\\(f'encode OK: {len\\(b64\\)} chars, scale {sx:.2f}x{sy:.2f}'\\)\nprint\\(f'hash OK: {h}'\\)\nprint\\(f'encode_pil OK: {len\\(screen.encode_pil\\(img\\)\\)} chars'\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers, screen\nimg = screen.capture_screen\\(\\)\n_, sx, sy = screen.image_to_base64\\(img\\)\nelem_map, ok = markers.get_interactive_elements\\(sx, sy\\)\nprint\\(f'AX available: {ok}'\\)\nprint\\(f'Elements found: {len\\(elem_map\\)}'\\)\nfor mid, e in list\\(elem_map.items\\(\\)\\)[:5]:\n    print\\(f'  #{mid} [{e[\\\\\"role\\\\\"]}] {e[\\\\\"label\\\\\"]!r} center_screen={tuple\\(int\\(v\\) for v in e[\\\\\"center_screen\\\\\"]\\)}'\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"import pkg_resources; pkgs = [p.project_name for p in pkg_resources.working_set if 'pyobjc' in p.project_name.lower\\(\\)]; print\\('\\\\n'.join\\(sorted\\(pkgs\\)\\)\\)\" 2>&1)",
+      "Bash(python3.11 -c \"\nfrom AppKit import NSWorkspace\napp = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\)\nprint\\('frontmost app:', app.localizedName\\(\\), 'pid:', app.processIdentifier\\(\\)\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport ctypes, ctypes.util\nax = ctypes.cdll.LoadLibrary\\(ctypes.util.find_library\\('ApplicationServices'\\)\\)\ncf = ctypes.cdll.LoadLibrary\\(ctypes.util.find_library\\('CoreFoundation'\\)\\)\n\nax.AXIsProcessTrusted.restype = ctypes.c_bool\nprint\\('AX trusted:', ax.AXIsProcessTrusted\\(\\)\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers, ctypes\nfrom AppKit import NSWorkspace\n\npid = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\).processIdentifier\\(\\)\nmarkers._ax_lib.AXUIElementCreateApplication.restype = markers._AXUIElementRef\nmarkers._ax_lib.AXUIElementCreateApplication.argtypes = [markers._pid_t]\napp_elem = markers._ax_lib.AXUIElementCreateApplication\\(pid\\)\nprint\\('app_elem:', app_elem\\)\n\nrole = markers._ax_get_role\\(app_elem\\)\nprint\\('role:', role\\)\nchildren = markers._ax_get_children\\(app_elem\\)\nprint\\('children count:', len\\(children\\)\\)\nif children:\n    child = children[0]\n    print\\('first child type:', type\\(child\\), 'val:', child\\)\n    role2 = markers._ax_get_role\\(child\\)\n    print\\('child role:', role2\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers, ctypes\nfrom AppKit import NSWorkspace\n\npid = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\).processIdentifier\\(\\)\nmarkers._ax_lib.AXUIElementCreateApplication.restype = markers._AXUIElementRef\nmarkers._ax_lib.AXUIElementCreateApplication.argtypes = [markers._pid_t]\napp_elem = markers._ax_lib.AXUIElementCreateApplication\\(pid\\)\nprint\\('app_elem type:', type\\(app_elem\\), 'val:', app_elem\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers\nfrom AppKit import NSWorkspace\napp = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\)\npid = app.processIdentifier\\(\\)\nprint\\('pid:', pid\\)\napp_elem = markers._ax.AXUIElementCreateApplication\\(pid\\)\nprint\\('app_elem:', app_elem\\)\nrole = markers._ax_get_str_attr\\(app_elem, 'AXRole'\\)\nprint\\('role:', role\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers\nfrom AppKit import NSWorkspace\npid = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\).processIdentifier\\(\\)\napp_elem = markers._ax.AXUIElementCreateApplication\\(pid\\)\nchildren = markers._ax_get_array_attr\\(app_elem, 'AXChildren'\\)\nprint\\('children:', len\\(children\\), children[:3]\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers\nfrom AppKit import NSWorkspace\npid = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\).processIdentifier\\(\\)\napp_elem = markers._ax.AXUIElementCreateApplication\\(pid\\)\nchildren = markers._ax_get_array_attr\\(app_elem, 'AXChildren'\\)\nchild0 = children[0]\nrole = markers._ax_get_str_attr\\(child0, 'AXRole'\\)\nprint\\('child role:', role\\)\nbounds = markers._ax_get_bounds\\(child0\\)\nprint\\('bounds:', bounds\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers\nfrom AppKit import NSWorkspace\npid = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\).processIdentifier\\(\\)\napp_elem = markers._ax.AXUIElementCreateApplication\\(pid\\)\nchildren = markers._ax_get_array_attr\\(app_elem, 'AXChildren'\\)\nchild0 = children[0]\nprint\\('child0:', child0\\)\nrole = markers._ax_get_str_attr\\(child0, 'AXRole'\\)\nprint\\('child role:', role\\)\n\" 2>&1)",
+      "Bash(python3.11 -c \"\nimport markers, ctypes\nfrom AppKit import NSWorkspace\npid = NSWorkspace.sharedWorkspace\\(\\).frontmostApplication\\(\\).processIdentifier\\(\\)\napp_elem = markers._ax.AXUIElementCreateApplication\\(pid\\)\nchildren = markers._ax_get_array_attr\\(app_elem, 'AXChildren'\\)\nchild0 = children[0]\nkey = markers._mk_cfstr\\('AXRole'\\)\nout = markers._VOIDP\\(0\\)\nprint\\('before AXCopy call'\\)\nerr = markers._ax.AXUIElementCopyAttributeValue\\(child0, key, ctypes.byref\\(out\\)\\)\nprint\\('err:', err, 'out:', out.value\\)\n\" 2>&1)",
+      "Bash(open:*)",
+      "Bash(python3.11 -c \"import agent; print\\('import ok'\\)\")",
+      "Bash(python3.11 -c \"\nimport markers, pyautogui\nsw, sh = pyautogui.size\\(\\)\nelem_map, ok = markers.get_interactive_elements\\(1.35, 1.35, sw, sh\\)\nprint\\(f'ok={ok}, elements={len\\(elem_map\\)}'\\)\nfor k,v in list\\(elem_map.items\\(\\)\\)[:5]:\n    print\\(f'  #{k}: {v[\\\\\"label\\\\\"]!r} role={v[\\\\\"role\\\\\"]} center={v[\\\\\"center_screen\\\\\"]}'\\)\n\" 2>&1)",
+      "Bash(find /Users/jianyulong/Desktop/gui-based_agent -type f -exec ls -lh {} \\\\;)"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# AI Firm — auto-generated
+.aifirm/knowledge/chroma/
+.aifirm/knowledge/*.db
+.aifirm/logs/
+__pycache__/
+*.pyc
+.env

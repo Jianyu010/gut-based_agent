@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "action_type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "max_retry_attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "health_check_status": {
+      "type": "string"
+    }
+  },
+  "required": ["action_type", "description", "max_retry_attempts", "health_check_status"],
+  "additionalProperties": false
+}
